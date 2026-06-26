@@ -11,9 +11,15 @@ Lightweight API client to query the SSL certs tracked in an OPSAT.net account. I
 
 ## Installation
 
+I like to install things like this in `/opt`.
+
 ```bash
 git clone https://github.com/opsat-net/opi-client-bash
-cd opi-client-bash
+```
+It can be symlinked to a PATH location.
+
+```bash
+sudo ln -s /opt/opi-client-bash/opsat.sh /usr/local/bin/opsat.sh
 ```
 
 ## Usage
@@ -27,25 +33,25 @@ export OPSAT_API_KEY=<YOUR-API-KEY-HERE>
 Fetch a list of all the domains tracked in the account in human readable format.
 
 ```bash
-./opsat.sh list
+opsat.sh list
 ```
 
 Fetch a list of all the domains tracked in the account as a JSON array of objects.
 
 ```bash
-./opsat.sh list --json
+opsat.sh list --json
 ```
 
 Fetch the info for a specific domain in human readable format.
 
 ```bash
-./opsat.sh get <domain>
+opsat.sh get <domain>
 ```
 
 Fetch the info for a specific domain as a JSON object.
 
 ```bash
-./opsat.sh get <domain> --json
+opsat.sh get <domain> --json
 ```
 
 ## TODO
