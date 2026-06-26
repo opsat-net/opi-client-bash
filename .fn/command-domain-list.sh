@@ -33,16 +33,16 @@ function CommandList() {(
 
 	########
 
-	if [[ $Mode == 'default' ]];
+	if [[ $Mode == "default" ]];
 	then
-		JQED=$(jq -r '(["Domain","CertDateExpire", "CertWhenExpire"] | @tsv), (["------","--------------","--------------"] | @tsv), (.Payload.Domains[] | [.Domain, .CertDateExpire, .CertWhenExpire] | @tsv)' <<< "$JSON")
+		JQED=$(jq -r "([\"Domain\",\"CertDateExpire\",\"CertWhenExpire\"] | @tsv), ([\"------\",\"--------------\",\"--------------\"] | @tsv), (.Payload.Domains[] | [.Domain, .CertDateExpire, .CertWhenExpire] | @tsv)" <<< "$JSON")
 		TBLD=$(column -ts $'\t' <<< "$JQED")
 		echo "$TBLD"
 	fi
 
 	########
 
-	if [[ $Mode == 'json' ]];
+	if [[ $Mode == "json" ]];
 	then
 		jq ".Payload.Domains" <<< "$JSON"
 	fi
