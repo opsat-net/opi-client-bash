@@ -24,22 +24,33 @@ Configure the API key.
 export OPSAT_API_KEY=<YOUR-API-KEY-HERE>
 ```
 
-Fetch a list of all the domains tracked in the account in a human readable format.
+Fetch a list of all the domains tracked in the account in human readable format.
 
 ```bash
 ./opsat.sh list
 ```
 
-Fetch a list of all the domains tracked in the account as a JSON array.
+Fetch a list of all the domains tracked in the account as a JSON array of objects.
 
 ```bash
 ./opsat.sh list --json
 ```
 
-## TODO
+Fetch the info for a specific domain in human readable format.
 
 ```bash
 ./opsat.sh get <domain>
+```
+
+Fetch the info for a specific domain as a JSON object.
+
+```bash
+./opsat.sh get <domain> --json
+```
+
+## TODO
+
+```bash
 ./opsat.sh add <domain>
 ./opsat.sh del <domain>
 ```
